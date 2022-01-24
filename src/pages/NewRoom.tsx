@@ -31,7 +31,7 @@ export function NewRoom() {
       authorId: user?.id
     })
 
-    history.push(`/rooms/${roomRef.key}`)
+    history.push(`/admin/rooms/${roomRef.key}`)
   }
 
   return (

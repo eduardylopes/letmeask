@@ -1,7 +1,7 @@
 import { ref, push, set, remove } from 'firebase/database';
 import { FormEvent, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { BiLike } from 'react-icons/bi'
 
 import logoImg from '../assets/images/logo.svg'
@@ -20,6 +20,8 @@ type RoomParams = {
 }
 
 export function Room() {
+  const history = useHistory()
+
   const { user } = useAuth();
   const params = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState('');
@@ -68,12 +70,18 @@ export function Room() {
     }
   }
 
+  function handleGoHome() {
+    history.push('/')
+  }
+
   return (
     <div id="page-room">
       <Toaster />
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask Logo" />
+          <button onClick={handleGoHome}>
+           <img src={logoImg} alt="Letmeask Logo" />
+          </button>
           <RoomCode code={roomId} />
         </div>
       </header>
@@ -111,6 +119,8 @@ export function Room() {
                   key={question.id}
                   content={question.content} 
                   author={question.author}
+                  isAnswered={question.isAnswered}
+                  isHighlighted={question.isHighlighted}
                 >
                   <button
                     className={`like-button ${question.likeId && 'liked'}`}

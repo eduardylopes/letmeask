@@ -9,9 +9,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      
+      > button {
+        border: none;
 
-      > img {
-        max-height: 45px;
+        > img {
+          max-height: 45px;
+        }
       }
 
       > div {

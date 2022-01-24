@@ -8,6 +8,21 @@
     margin-top: 8px;
   }
 
+  
+  &.highlighted {
+    background-color: #f4f0ff;
+    border: 1px solid #8351fd;
+    
+    footer .user-info span {
+      color: #29292e;
+    }
+  }
+  
+  &.answered {
+    background-color: #dbdcdd;
+    border: none;
+  }
+
   p {
     color: #29292e;
   }
@@ -32,6 +47,26 @@
         margin-left: 8px;
         color: #737380;
         font-size: 14px;
+      }
+    }
+
+    > div {
+      display: flex;
+      gap: 16px;
+
+      .menu-icons {
+        color: #737380;
+        font-size: 20px;
+        transition: filter 0.2s;
+
+        &:hover {
+          filter: brightness(0.7)
+        }
+
+      }
+      
+      .icon-highlighted {
+        color: #8351fd;
       }
     }
 
