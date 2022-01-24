@@ -33,6 +33,12 @@
     }
   }
 
+  @media screen and (max-width: 768px) {
+    aside {
+      display: none;
+    }
+  }
+
   main {
     flex: 8;
 

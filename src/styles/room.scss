@@ -3,6 +3,11 @@
     padding: 24px;
     border-bottom: 1px solid #e2e2e2;
 
+    .logo {
+      border: none;
+      background: transparent;
+    }
+
     .content {
       max-width: 1120px;
       margin: 0 auto;
@@ -11,10 +16,33 @@
       align-items: center;
       
       > button {
-        border: none;
+        // border: none;
 
         > img {
           max-height: 45px;
+        }
+      }
+
+      .room-code.user-room-code {
+        margin-left: auto;
+      }
+
+      @media screen and (max-width: 768px) {
+        .logo {
+          display: none;
+        }
+
+        > div {
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .room-code {
+          margin-left: 0;
+        }
+
+        .user-room.user-room-code {
+          margin-left: 0;
         }
       }
 
@@ -30,6 +58,7 @@
   }
 
   main {
+    padding: 0 1rem;
     max-width: 800px;
     margin: 0 auto;
 

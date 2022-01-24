@@ -11,6 +11,7 @@ import { useRoom } from '../hooks/useRoom';
 import "../styles/room.scss"
 import { database } from '../services/firebase';
 import { child, get, ref, remove, update } from 'firebase/database';
+import { BiExit } from 'react-icons/bi';
 
 type RoomParams = {
   id: string;
@@ -67,7 +68,7 @@ export function AdminRoom() {
       <Toaster />
       <header>
         <div className="content">
-          <button onClick={handleGoHome}>
+          <button className="logo" onClick={handleGoHome}>
             <img src={logoImg} alt="Letmeask Logo" />
           </button>
           <div>
@@ -75,7 +76,10 @@ export function AdminRoom() {
             <Button 
               isOutlined
               onClick={handleEndRoom}
-            >Encerrar sala</Button>
+            >
+              <BiExit className='exit-button'/>
+              <span className='exit-description'>Encerrar sala</span>
+            </Button>
           </div>
         </div>
       </header>

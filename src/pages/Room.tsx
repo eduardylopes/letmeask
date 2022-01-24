@@ -79,10 +79,10 @@ export function Room() {
       <Toaster />
       <header>
         <div className="content">
-          <button onClick={handleGoHome}>
+          <button className="logo" onClick={handleGoHome}>
            <img src={logoImg} alt="Letmeask Logo" />
           </button>
-          <RoomCode code={roomId} />
+          <RoomCode code={roomId} className='user-room-code' />
         </div>
       </header>
       <main className="content">

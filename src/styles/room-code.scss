@@ -1,5 +1,8 @@
 .room-code {
+  margin-left: auto;
   height: 40px;
+  width: auto;
+  flex-wrap: nowrap;
   border-radius: 8px;
 
   overflow: hidden;
@@ -20,6 +23,8 @@
   }
 
   span {
+    flex-wrap: nowrap;
+    width: auto;
     display: block;
     align-self: center;
     flex: 1;
@@ -27,5 +32,22 @@
     width: auto;
     font-size: 14px;
     font-weight: 500;
+  }
+
+
+}
+
+.exit-button {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .exit-description {
+    display: none;
+  }
+
+  .exit-button {
+    display: inline-block;
+    font-size: 2rem;
   }
 }
